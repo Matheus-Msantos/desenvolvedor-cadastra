@@ -98,11 +98,11 @@ const dev = () => {
     "change",
     browserSync.reload
   );
-  server();
+
 };
 
 exports.build = build;
-exports.server = server;
+//exports.server = server;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.default = dev;
