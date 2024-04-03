@@ -26,11 +26,10 @@ const PopupMiniCart = (
 
   const handleRemoveProduct = (item: string) => {
     loadProduct(true)
-    const tarefasDb = localStorage['produtos'];
-    let tarefas = tarefasDb ? JSON.parse(tarefasDb) : [];
-    tarefas = tarefas.filter((tarefa: any) => tarefa.id !== item)
-    console.log('ta', tarefas)
-    localStorage['produtos'] = JSON.stringify(tarefas);
+    const productDB = localStorage['produtos'];
+    let product = productDB ? JSON.parse(productDB) : [];
+    product = product.filter((product: any) => product.id !== item)
+    localStorage['produtos'] = JSON.stringify(product);
   }
 
   return (
