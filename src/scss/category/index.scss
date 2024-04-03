@@ -1,0 +1,236 @@
+.cadastra-main {
+  max-width: 1500px;
+  margin: 0 auto 32px auto;
+  padding: 0 100px;
+  min-height: 100vh;
+
+  @include mobile {
+    position: relative;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+  
+  &_top {
+    max-width: 1500px;
+    margin: 0 auto 54px auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    
+
+    @include mobile {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 24px;
+      margin-bottom: 34px;
+
+      &-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 12px;
+      }
+
+    }
+
+    &-filter--button {
+      display: none;
+
+      @include mobile {
+        display: block;
+        width: 50%;
+        height: 49px;
+        line-height: 44px;
+        border: 1px solid #666666;
+        background: transparent;
+        font-size: 24px;
+        font-weight: 400;
+        padding: 0;
+        color: #666666;
+
+        &-filter {
+          position: absolute;
+          top: 68px;
+        }
+      }
+    }
+
+    &-title {
+      color: #333333;
+      font-size: 32px;
+    }
+
+    &-orderBy--flex {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include mobile {
+        position: inherit;
+        width: 50%; 
+      }
+    }
+
+    &-orderBy {
+      position: relative;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      background: transparent;
+      padding: 10px 34px 10px 10px;
+      cursor: pointer;
+      
+      @include mobile {
+        width: 100%;
+        height: 49px;
+        line-height: 44px;
+        border: 1px solid #666666;
+        border-left: 0;
+        background: transparent;
+        padding: 0;
+        font-weight: 400;
+        color: #666666;
+        font-size: 24px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 0;
+        bottom: 0; 
+        width: 12px;
+        height: 9px;
+        background: url('data:image/svg+xml,<svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 10L13 1.00935" stroke="%23666666" stroke-linecap="round"/></svg>') no-repeat center;
+        background-size: 100% 100%;
+        margin: auto;
+        
+        @include mobile {
+          display: inline;
+          content: "Ordenar";
+          position: relative;
+          top: auto;
+          bottom: auto;
+          background: none;
+          right: auto;
+        }
+        
+      }
+
+      &-select {
+        @include mobile {
+          font-size: 0px;
+        }
+          
+      }
+
+      &-container {
+        position: absolute;
+        width: 99%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-top: 0;
+        top: 40px;
+        background: #fff;
+        visibility: hidden;
+        
+        @include mobile {
+          position: fixed;
+          border: none;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          z-index: 9;
+        }
+
+        &-header {
+          display: none;
+    
+          @include mobile {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #666666;
+            margin-bottom: 30px;
+    
+            &--text {
+              font-size: 28px;
+              color: #666666;
+              line-height: normal;
+            }
+    
+            &--button {
+              display: block;
+              background: none;
+              border: none;
+              cursor: pointer;
+              height: fit-content;
+              padding: 0;
+    
+              svg {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+        
+        &--item {
+          display: block;
+          width: 100%;
+          text-align: start;
+          padding: 10px;
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+
+          @include mobile {
+            font-size: 22px;
+            padding: 0 16px;
+            margin-bottom: 30px;
+          }
+          
+          &:hover {
+            background: #FB953E;
+            color: #fff;
+          }
+        }
+        
+        &--active {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &_category {
+    display: flex;
+
+    @import "shelf";
+    @import "filter";
+
+    &-empty {
+      width: 100%;
+
+      &-title {
+        text-align: center;
+        font-size: 32px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      &-subtitle {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #666666;
+        font-weight: 600;
+      }
+    }
+    }
+  }

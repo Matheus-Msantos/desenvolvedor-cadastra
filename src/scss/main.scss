@@ -1,1 +1,8 @@
+@import 'config';
 @import "reset";
+@import "general";
+
+@import "header";
+@import "footer";
+
+@import "./category/index.scss";

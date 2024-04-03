@@ -1,0 +1,88 @@
+.cadastra-main_category-shelf {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  &--container {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+    @include mobile {
+      justify-content: center;
+    }
+
+  }
+
+  &-item {
+    margin: 0 32px 42px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+      margin: 0 8px 18px 8px;
+      width: 157px;
+    }
+
+    &--image {
+      display: block;
+      margin-bottom: 10px;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &--name {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    &--price {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    &--installment {
+      text-align: center;
+      color: #666666;
+      margin-bottom: 14px;
+    }
+
+    &--buy {
+      display: block;
+      background: #000;
+      width: 100%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 7px 0;
+      cursor: pointer;
+      border: 0;
+    }
+  }
+
+  &--showMore {
+    display: block;
+    width: 175px;
+    margin: 30px auto 0 auto;
+    background: #FB953E;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #000;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+}

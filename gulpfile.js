@@ -16,7 +16,7 @@ const paths = {
     watch: "src/ts/**/*.ts",
   },
   styles: {
-    src: "src/scss/main.scss",
+    src: "src/scss/**/*.scss",
   },
   img: {
     src: "src/img/**/*",
@@ -24,7 +24,7 @@ const paths = {
   html: {
     src: "src/index.html",
   },
-  dest: "dist",
+  dest: "public",
   temp: ".tmp",
 };
 
@@ -43,7 +43,7 @@ function server() {
 function styles() {
   return src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass().on("error", sass.logError))
     .pipe(
       autoprefixer({
         cascade: false,

@@ -1,0 +1,174 @@
+.cadastra-header {
+  border-bottom: 1px solid #C7C7C7;
+  padding: 22px 0 17px 0;
+
+  &_container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+
+    @include mobile {
+      max-width: 100%;
+      padding: 0 30px;
+    }
+
+    &-img {
+      width: 165px;
+      height: fit-content;
+    }
+
+    &-minicart {
+      position: relative;
+      width: 17px;
+      height: 20px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+
+      &:hover {
+        background: transparent;
+      }
+
+      &-number {
+        position: absolute;
+        display: block;
+        background: #FB953E;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        font-size: 10px;
+        color: #fff;
+        top: 11px;
+        right: -5px;
+      }
+
+      &-product {
+        display: none;
+        position: absolute;
+        right: 11px;
+        background: #fff;
+        width: 273px;
+        height: 300px;
+        overflow-y: auto;
+        z-index: 9;
+        padding: 16px;
+        box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+
+        &-active {
+          display: block;
+        }
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb  {
+          background: #FB953E; 
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey; 
+          border-radius: 10px;
+        }
+
+        &-title {
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          border-bottom: 1px solid #C7C7C7;
+          padding-bottom: 13px;
+          margin-bottom: 5px;
+          font-size: 24px;
+          font-weight: 600;
+
+          &::after {
+            content: "Icon";
+            font-size: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 18px;
+            order: 1;
+          }
+        }
+
+        
+        &-item {
+          position: relative;
+          display: flex;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+
+          &-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+  
+          &-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+          }
+
+          &-text {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+          
+          &-price {
+            color: #FB953E;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+
+          &-color {
+            font-weight: 500;
+            font-size: 14px;
+            color: #666666;
+          }
+
+          &-remove {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            border: 0;
+            background-color: transparent;
+            font-size: 0;
+
+            &::after {
+              content: "Icon";
+              font-size: 0;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>');
+              background-repeat: no-repeat;
+              background-size: contain;
+              cursor: pointer;
+            }
+          }
+        }
+
+        &-empty {
+          text-align: center;
+          color: #000;
+          font-size: 20px;
+          font-weight: 700;
+          margin-top: 60px;
+        }
+      }
+    }
+  }
+}
